@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>¿Estas seguro?</h2>
+<mat-dialog-content>
+  <p>Este artículo se eliminará de forma permanente</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <span style="flex: 1;" class="spacer"></span>
+  <button mat-button (click)="onConfirm()" cdkFocusInitial>Eliminar</button>
+</mat-dialog-actions>

@@ -1,0 +1,80 @@
+<h1>
+    {{ isEdit ? 'Editar' : 'Agregar' }}
+    articulo
+  </h1>
+  
+  <mat-divider class="mb-2"></mat-divider>
+  
+  <div class="grid">
+  
+    <div class="col-12">
+      <mat-card>
+        <mat-card-content>
+  
+          <form class="grid mt-2" [formGroup]="articleForm" (ngSubmit)="onSubmit" >
+  
+            <mat-form-field class="col-12">
+              <mat-label>Nombre Editor</mat-label>
+              <input
+                matInput
+                type="text"
+                required
+                formControlName="publicher_name"
+              />
+              <mat-error *ngIf="isValidField('publicher_name')" >
+                {{getFieldError('publicher_name')}}
+              </mat-error>
+            </mat-form-field>
+  
+            <mat-form-field class="col-12">
+              <mat-label>Título artículo</mat-label>
+              <input
+                matInput
+                type="text"
+                required
+                formControlName="title"
+              />
+              <mat-error *ngIf="isValidField('title')" >
+                {{getFieldError('title')}}
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="col-12">
+                <mat-label>Link artículo</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  required
+                  formControlName="url"
+                />
+                <mat-error *ngIf="isValidField('url')" >
+                  {{getFieldError('url')}}
+                </mat-error>
+              </mat-form-field>
+
+            </form>
+  
+          <div class="flex justify-content-between">
+            <button
+              mat-flat-button
+              color="basic"
+              (click)="goBack()"
+            >
+              <mat-icon>save</mat-icon>
+              Volver
+            </button>
+  
+            <button
+              mat-flat-button
+              color="primary"
+              (click)="onSubmit()"
+            >
+              <mat-icon>save</mat-icon>
+              {{ isEdit ? 'Editar' : 'Guardar' }}
+            </button>
+          </div>
+  
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
