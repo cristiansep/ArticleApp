@@ -56,7 +56,7 @@ export class CardArticleComponent implements OnInit {
   }
 
   getLargeText(text: string): string {
-    return text.length > 40 ? text.slice(0, 40) + '...' : text;
+    return text.length > 20 ? text.slice(0, 20) + '...' : text;
   }
 
 }
