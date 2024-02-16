@@ -1,11 +1,11 @@
 <mat-card class="custom-card">
   <mat-card-header class="header-container">
     <mat-card-title>
-      {{article.publisher.name}}
+      {{getLargeText(article.publisher.name)}}
       <span class="spacer"></span>
     </mat-card-title>
     <mat-card-subtitle>
-      <span>{{article.published_date | date:'dd/MM/yyyy' }}</span>
+      <span class="text-ellipsis">{{article.published_date | date:'dd/MM/yyyy' }}</span>
     </mat-card-subtitle>
     <button class="icon-delete" mat-icon-button color="accent" (click)="onConfirmDelete()">
       <mat-icon>delete</mat-icon>
